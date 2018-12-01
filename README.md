@@ -1,0 +1,1 @@
+https://yegoryakymenko.github.io/live-games-test/dist/index.html
