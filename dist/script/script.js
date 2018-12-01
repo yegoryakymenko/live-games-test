@@ -19,8 +19,6 @@ let form = document.getElementById('myform');
 form.addEventListener('submit', Validator);
 
 function Validator(e) {
-  // Variables for function
-//  console.log(form.getElementsByTagName('input'));
   let formEl       = document.getElementById(form.id);
   let formFields   = formEl.elements;
   console.log(formFields)
@@ -95,12 +93,3 @@ function Validator(e) {
     showErrors(errors);
   }
 };
-  
-// formFields[i] по этому масиву пробежаться и применить к каждому элементу метод isEmpty
-// если необходимо также применить и другие методы, если их имена находяться в дата атрибуте
-// достать инфу из дата атрибута можно formFields[i].dataset.rule
-// при submit нужно будет достать нейм из массива ошибок, по данному нейму применить метод который описан в объекте rules 
-// и после если данный метод будет возвращать false применить метод showError()/showSuccess()
-// 
-//
-//
