@@ -82,7 +82,7 @@ function Validator(e) {
   }
 
   for(let i = 0; i < formFields.length; i++) {
-    if(formFields[i].dataset.rule != undefined){
+    if(formFields[i].dataset.rule !== undefined) {
       let rulesList = formFields[i].dataset.rule;
       rulesList     = rulesList.split(' ');
       for(let j = 0; j < rulesList.length; j++) {
