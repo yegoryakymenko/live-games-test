@@ -85,7 +85,7 @@ function Validator(e) {
     console.log(arr);
   }
   for(let i = 0; i < formFields.length; i++) {
-    if(formFields[i].tagName != 'TEXTAREA' && formFields[i].tagName != 'BUTTON'){
+    if(formFields[i].dataset.rule != undefined){
       let rulesList = formFields[i].dataset.rule;
       rulesList     = rulesList.split(' ');
       for(let j = 0; j < rulesList.length; j++) {
