@@ -57,13 +57,17 @@ function Validator(e) {
     password: function(el) {
       if(!rulesPattern.password.test(el.value)) {
         showError(el);
-        console.log(123);
         return false;
       } else {
         showSuccess(el);
         return true;
       }
     }
+  }
+  let showError = function(el) {
+      el.classList.remove('success');
+      el.classList.add('error');
+      el.nextElementSibling.innerHTML = el.dataset.error;
   }
   let showSuccess = function(el) {
     el.classList.remove('error');
@@ -76,9 +80,7 @@ function Validator(e) {
   let showSuccessCheck = function(el) {
     el.nextElementSibling.innerHTML = '';
   }
-  let showErrors = function(arr) {
-    console.log(arr);
-  }
+
   for(let i = 0; i < formFields.length; i++) {
     if(formFields[i].dataset.rule != undefined){
       let rulesList = formFields[i].dataset.rule;
