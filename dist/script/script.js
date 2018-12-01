@@ -65,11 +65,6 @@ function Validator(e) {
       }
     }
   }
-  let showError = function(el) {
-      el.classList.remove('success');
-      el.classList.add('error');
-      el.nextElementSibling.innerHTML = el.dataset.error;
-  }
   let showSuccess = function(el) {
     el.classList.remove('error');
     el.classList.add('success');
@@ -102,6 +97,5 @@ function Validator(e) {
   }
   if(errors.length > 0) {
     e.preventDefault();
-    showErrors(errors);
   }
 };
