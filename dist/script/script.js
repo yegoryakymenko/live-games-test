@@ -21,11 +21,10 @@ form.addEventListener('submit', Validator);
 function Validator(e) {
   let formEl       = document.getElementById(form.id);
   let formFields   = formEl.elements;
-  console.log(formFields)
-  let password = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/
   let errors        = [];
   let rulesPattern = {
     email: /^([A-Za-z0-9_\-\.]{2,})+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,})$/,
+    password : /(?=.*\d)(?=.*[A-Za-z])/g
   }
   let rules = {
     required: function(el) {
@@ -47,10 +46,23 @@ function Validator(e) {
       }  
     },
     email: function(el) {
-      return rulesPattern.email.test(el.value)
+      if(!rulesPattern.email.test(el.value)) {
+        showError(el);
+        return false;
+      } else {
+        showSuccess(el);
+        return true;
+      }
     },
     password: function(el) {
-      return console.log(password.test(el.value)+ ' ' + el.value);
+      if(!rulesPattern.password.test(el.value)) {
+        showError(el);
+        console.log(123);
+        return false;
+      } else {
+        showSuccess(el);
+        return true;
+      }
     }
   }
   let showError = function(el) {
