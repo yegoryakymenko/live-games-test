@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <title>Document</title>
+</head>
+<body>
+  <form id="myform">
+    <div class="form-part">
+      <label for="firstName">First Name <sup>*</sup></label>
+      <input type="text" name="firstName" data-rule="required" data-error="Must be not empty" id="firstName">
+      <div class="message"></div>
+    </div>   
+    <div class="form-part">
+      <label for="lastName">Last Name<sup>*</sup></label>
+      <input type="text" name="lastName" data-rule="required" data-error="Must be not empty" id="lastName">
+      <div class="message"></div>
+    </div> 
+    <div class="form-part"> 
+      <label for="password">Password<sup>*</sup></label>
+      <input type="password" name="password" data-rule="password required" data-error="Must include digits and letters" id="password">
+      <div class="message"></div>
+    </div>    
+    <div class="form-part"> 
+      <label for="email">Email<sup>*</sup></label>
+      <input type="email" name="email" data-rule="required email" data-error="Must be not empty, contains @, and domain name" id="email">
+      <div class="message"></div>
+    </div>
+    <div class="form-part">
+      <label for="comment">Field for comments</label>
+      <textarea name="comment" cols="30" rows="5" ></textarea>
+    </div>
+    <div class="form-part">
+      <label for="country">Country select<sup>*</sup></label>
+      <select name="country" id="" data-rule="required" data-error="Must be not empty" id="country">
+        <option selected disabled></option>
+        <option value="ukraine">Ukraine</option>
+        <option value="russia">Russia</option>
+        <option value="germany">Germany</option>
+        <option value="usa">USA</option>
+        <option value="england">England</option>
+      </select>
+      <div class="message"></div>
+    </div>
+    <div class="form-part">
+      <label for="checkbox">Are you agree?<sup>*</sup></label>
+      <input type="checkbox" name="checkbox" data-rule="checked" data-error="Must be checked" id="checkbox">
+      <div class="message"></div>
+    </div>
+    <div class="form-part">
+      <button type="submit" class="submit" >Submit</button>
+    </div>
+    <div class="form-part">
+      <button type="reset">Reset all fields</button>
+    </div>
+  </form>
+<script src="script/script.js"></script>
+</body>
+</html>
