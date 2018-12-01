@@ -14,14 +14,12 @@
 // Email должен валидироваться регуляркой, checkbox должен быть выбран, кнопка reset обнуляет форму.
 // У всех полей должен быть label. Можно использовать jquery, нельзя использовать какие-либо плагины для валидации форм. 
 // Условие задания чтоб форму можно было легко менять - добавлять новые поля, не меняя js можно было указывать что поле обязательное или нет
-let reset = document.querySelector('.reset');
-reset.addEventListener('click', function() {
-  location.reload();
-})
+
 let form  = document.getElementById('myform');
 form.addEventListener('submit', Validator);
 
 function Validator(e) {
+  let reset        = document.querySelector('.reset');
   let formEl       = document.getElementById(form.id);
   let formFields   = formEl.elements;
   let errors       = [];
@@ -67,6 +65,13 @@ function Validator(e) {
       }
     }
   }
+  reset.addEventListener('click', function() {
+    for(let z = 0; z < formFields.length; z++) {
+      if(formFields[z].dataset.rule !== undefined) {
+        showSuccess(formFields[z]);
+      }
+    }
+  });
   let showError = function(el) {
       el.classList.remove('success');
       el.classList.add('error');
