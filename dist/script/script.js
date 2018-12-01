@@ -21,7 +21,7 @@ form.addEventListener('submit', Validator);
 function Validator(e) {
   let formEl       = document.getElementById(form.id);
   let formFields   = formEl.elements;
-  let errors        = [];
+  let errors       = [];
   let rulesPattern = {
     email: /^([A-Za-z0-9_\-\.]{2,})+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,})$/,
     password : /(?=.*\d)(?=.*[A-Za-z])/g
